@@ -1,0 +1,9 @@
+
+.trPeople:nth-child(even){
+	background-color:#E6E6E6;
+}
+.table tr td{
+	padding: 10px;
+	font-size: 15px;
+}
+
