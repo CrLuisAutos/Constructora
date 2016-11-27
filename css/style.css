@@ -1,9 +1,26 @@
+footer{
+	width: 100%;
+	height: 40px;
+	background-color: #5882FA;
+	bottom: 0;
+	position: fixed;
+}
+footer p{
+	text-align: center;
+	color: #fff;
+}
 
 .trPeople:nth-child(even){
-	background-color:#E6E6E6;
+	background-color: #F2F2F2;
 }
-.table tr td{
+.table-bordered tr td{
 	padding: 10px;
 	font-size: 15px;
+}
+.glyphicon-trash{
+	margin-right: 20px;
+}
+label-danger{
+	display: none;
 }
 
