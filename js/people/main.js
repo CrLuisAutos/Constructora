@@ -1,7 +1,9 @@
-var avatar;
-var id;
-var name;
-var people[];
+var avatar = "";
+var id = "";
+var name = "";
+var idArray = [];
+var nameArray = [];
+var avatarArray = [];
 
 var Persister = {
     save: function(key, value) {
@@ -19,33 +21,27 @@ var Persister = {
         return JSON.parse(json_string);
     }
 };
-jQuery(document).ready(function($) {
-    /*evento del boton agregar persona*/
-    $("#savePeople").click(function(ev) {
-        avatar = $("#avatar").val();
-        id = $("#id").val();
-        name = $("#name").val();
-        if ((name !== "") && (avatar !== "") && (id !== "")) {
-            cleanModal();
-            $("inputSuccess").click();
-            people.push({
-                people: id,
-                avatar,
-                name
-            });
-            Persister.saveObj('people', people);
-            return $(".table").append('<tr class="trPeople"><td class="table-striped">' + id + '</td><td class="table-striped">' + name + '</td><td class="table-striped">' + avatar + '</td><td class="table-striped"><a class="btnDelete"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></a><a class="btnEdit"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td></tr>');
-        } else {
-            $("#msj").val("kgugujv");
-        }
+/*limpia los label del modal*/
+function cleanModal() {
+    $("#name").val("");
+    $("#avatar").val("");
+    $("#id").val("");
 
-    });
-    /*carga los datos del modal*/
-    function load_People() {
-
+}
+/*carga los datos del modal*/
+function load_People() {
+    $("#peopleTable").html("");
+    idArray = Persister.loadObj('id', "[]");
+    nameArray = Persister.loadObj('name', "[]");
+    avatarArray = Persister.loadObj('avatar', "[]");
+    for (var i = 0; i < idArray.length; i++) {
+        id = idArray[i];
+        name = nameArray[i];
+        avatar = avatarArray[i];
+        $('#.table').append('<tr class="trPeople"><td class="table-striped">' + id + '</td><td class="table-striped">' + name + '</td><td class="table-striped">' + avatar + '</td><td class="table-striped"><a class="btnDelete"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></a><a class="btnEdit"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td></tr>');
     }
-
-    /*Elimina row de la tabla*/
+}
+   /*Elimina row de la tabla*/
     $('.table').on('click', '.btnDelete', function() {
         event.preventDefault();
         $(this).parent().parent().remove();
@@ -64,11 +60,30 @@ jQuery(document).ready(function($) {
         $("#id").focus();
     });
 
-    /*limpia los label del modal*/
-    function cleanModal() {
-        $("#name").val("");
-        $("#avatar").val("");
-        $("#id").val("");
-
-    }
+$(document).ready(function() {
+    debugger;
+    load_People();
+    /*evento del boton agregar persona*/
+    $("#savePeople").click(function() {
+        avatar = $("#avatar").val();
+        id = $("#id").val();
+        name = $("#name").val();
+        if ((name !== "") && (avatar !== "") && (id !== "")) {
+            cleanModal();
+            $("inputSuccess").click();
+            idArray.push({
+                "id": id
+            });
+            nameArray.push({
+                "name": name
+            });
+            avatarArray.push({
+                "avatar": avatar
+            });
+            Persister.saveObj('people', people);
+            return $(".table").append('<tr class="trPeople"><td class="table-striped">' + id + '</td><td class="table-striped">' + name + '</td><td class="table-striped">' + avatar + '</td><td class="table-striped"><a class="btnDelete"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></a><a class="btnEdit"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td></tr>');
+        } else {
+            $("#msj").val("kgugujv");
+        }
+    });
 });
