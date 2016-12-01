@@ -18,7 +18,7 @@
 			<li role="presentation" class="active"><a href="#">People</a></li>
 			<li role="presentation"><a href="../task/task.html">Task states</a></li>
 		</ul>
-		<table class="table table-bordered">
+		<table class="table table-bordered" id="peopleTable">
 			<thead>
 				<tr class="info">
 					<th>Id</th>
@@ -31,6 +31,9 @@
 					</th>
 				</tr>
 			</thead>
+			<tbody>
+				
+			</tbody>
 		</table>
 		<!-- Modal Add People and Edit People -->
 		<div class="container">
@@ -47,7 +50,6 @@
 							<input type="text" autofocus placeholder="Id" id="id"/>
 							<input type="text" placeholder="Name" id="name"/>
 							<input type="text" placeholder="Avatar" id="avatar"/>
-							<p id="msj" class="bg-danger"></p>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal" id="inputSuccess">Close</button>
