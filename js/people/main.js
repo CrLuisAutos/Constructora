@@ -73,10 +73,5 @@ jQuery(document).ready(function($) {
     $('#myModal3').on('shown.bs.modal', function() {
         $("#id").focus();
     });
-    $(window).on("load resize ", function() {
-        var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
-        $('.tbl-header').css({
-            'padding-right': scrollWidth
-        });
-    }).resize();
+    
 });

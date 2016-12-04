@@ -41,6 +41,24 @@ jQuery(document).ready(function($) {
 	load_Projects();
     $("#add").click(function() {
         $("#startDate").val(today());
+        $("#associates").val(projectsCount());
+    });
+
+    //save botton
+    $("#saveProject").click(function(event) {
+        var detail = {};
+        detail.id = $("#id").val();
+        detail.name = $("#name").val();
+        detail.date = today();
+        detail.associates = projectsCount();
+        detail.icon = $("#icon").val();
+        if ((detail.name !== "") && (detail.id !== "")) {
+            cleanModal();
+            $("inputSuccess").click();
+            projects.push(detail);
+            Persister.saveObj('projects', projects);
+            load_Projects();
+        }
     });
 });
 	//total de projectos
@@ -52,3 +70,15 @@ function today () {
 	var f = new Date();
     return date=(f.getDate() + "/" + (f.getMonth() + 1) + "/" + f.getFullYear());
 }
+/*limpia los label del modal*/
+function cleanModal() {
+    $("#name").val("");
+    $("#icon").val("");
+    $("#id").val("");
+    $("#startDate").val("");
+    $("#associates").val("");
+}
+/*Autofocus en el modal*/
+    $('#myModal3').on('shown.bs.modal', function() {
+        $("#id").focus();
+    });
