@@ -1,0 +1,75 @@
+th h1 {
+  font-size:1.2em; 
+  font-weight: 200;
+  line-height:1em;
+  text-align: center;
+  color: #4DC3FA;
+}
+
+h1 {
+    font-weight: bold;
+  font-size: 0.8em;
+  text-align: center;
+  color: #FFF;
+}
+
+.containerTable td {
+    font-weight: normal;
+    font-size: 1em;
+  -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+     -moz-box-shadow: 0 2px 2px -2px #0E1119;
+          box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+.containerTable {
+    text-align: left;
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+  display: table;
+  padding: 0 0 0em 0;
+}
+
+.containerTable td {
+    padding-bottom: 2%;
+    padding-top: 2%;
+  padding-left:2%;  
+}
+
+/* Background-color of the odd rows */
+.containerTable tr:nth-child(odd) {
+    background-color: #323C50;
+}
+
+/* Background-color of the even rows */
+.containerTable tr:nth-child(even) {
+    background-color: #2C3446;
+}
+
+.containerTable th {
+    background-color: #1F2739;
+    padding-top: 40px;
+}
+
+.containerTable td:first-child { color: #FB667A; }
+
+.containerTable tr:hover {
+   background-color: #464A52;
+-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+     -moz-box-shadow: 0 6px 6px -6px #0E1119;
+          box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+.containerTable td:hover {
+  background-color: #5882FA;
+  color: #1C1C1C;
+  font-weight: bold;
+  box-shadow: #81BEF7 -1px 1px, #81BEF7 -2px 2px, #81BEF7 -3px 3px, #81BEF7 -4px 4px, #81BEF7 -5px 5px, #151515 -6px 6px;
+  transform: translate3d(6px, -6px, 0);
+  transition-delay: 0s;
+  transition-duration: 0.4s;
+  transition-property: all;
+  transition-timing-function: line;
+}
+
+

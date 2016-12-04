@@ -4,26 +4,26 @@
 		<title>People</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="../css/people/style.css">
-		<link rel="stylesheet" type="text/css" href="../css/style.css">
 		<link rel="stylesheet" type="text/css" href="../css/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<link rel="stylesheet" type="text/css" href="../css/people/style.css">
 	</head>
 	<body>
 		<header>
-			<img class="img-responsive" src="../images/img.jpg">
+			<ul class="nav nav-tabs">
+				<li role="presentation" ><a href="../index.html">Home</a></li>
+				<li role="presentation"><a href="#">Projects</a></li>
+				<li role="presentation" class="active"><a href="#">People</a></li>
+				<li role="presentation"><a href="../task/task.html">Task states</a></li>
+			</ul>
 		</header>
-		<ul class="nav nav-tabs">
-			<li role="presentation" ><a href="../index.html">Home</a></li>
-			<li role="presentation"><a href="#">Projects</a></li>
-			<li role="presentation" class="active"><a href="#">People</a></li>
-			<li role="presentation"><a href="../task/task.html">Task states</a></li>
-		</ul>
-		<table class="table table-bordered" id="peopleTable">
+		
+		<table class="containerTable">
 			<thead>
-				<tr class="info">
-					<th>Id</th>
-					<th>Name</th>
-					<th>Avatar</th>
+				<tr>
+					<th><h1>Id</h1></th>
+					<th><h1>Name</h1></th>
+					<th><h1>Avatar</h1></th>
 					<th>
 						<button data-toggle="modal" data-target="#myModal3" data-backdrop="static" class="btn btn-default" data-toggle="tooltip" title="Add people" id="add">
 						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -35,6 +35,7 @@
 				
 			</tbody>
 		</table>
+		
 		<!-- Modal Add People and Edit People -->
 		<div class="container">
 			<div class="modal fade" id="myModal3" role="dialog">
