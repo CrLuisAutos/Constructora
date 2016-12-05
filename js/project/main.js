@@ -34,16 +34,11 @@ function load_Projects() {
         date = projects[i].date;
         associates = projects[i].associates;
         icon = projects[i].icon;
-        $('tbody').append('<tr class="trprojects" id=' + id + '><td class="table-striped"> <h1>' + id + '</h1></td><td class="table-striped"> <h1>' + name + '</h1></td><td class="table-striped"> <h1>' + associates + '</h1></td><td class="table-striped"><h1>' + date + '</h1></td><td class="table-striped"> <h1>' + icon + '</h1></td><td class="table-striped"><a class="btnDelete"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></a></td></tr>');
+        $('tbody').append('<tr class="trprojects" id=' + id + '><td class="table-striped"> <h1>' + id + '</h1></td><td class="table-striped"> <h1>' + name + '</h1></td><td class="table-striped"> <h1>' + icon + '</h1></td><td class="table-striped"><h1>' + date + '</h1></td><td class="table-striped"> <h1>' + associates + '</h1></td><td class="table-striped"><a class="btnDelete"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></a><a class="btnDelete"><span class="glyphicon glyphicon-new-window" aria-hidden="true" ></span></a></td></tr>');
     }
 }
 jQuery(document).ready(function($) {
 	load_Projects();
-    $("#add").click(function() {
-        $("#startDate").val(today());
-        $("#associates").val(projectsCount());
-    });
-
     //save botton
     $("#saveProject").click(function(event) {
         var detail = {};
@@ -61,9 +56,9 @@ jQuery(document).ready(function($) {
         }
     });
 });
-	//total de projectos
+	//total de personas asociadas al projecto
 function projectsCount () {
-	return projects.length;
+	return 0;
 }
 	// toma la fecha del sistema
 function today () {
@@ -75,9 +70,22 @@ function cleanModal() {
     $("#name").val("");
     $("#icon").val("");
     $("#id").val("");
-    $("#startDate").val("");
-    $("#associates").val("");
 }
+/*Elimina row de la tabla*/
+    $('tbody').on('click', '.btnDelete', function() {
+        event.preventDefault();
+        var x = $(this).parent().parent().attr('id');
+        projects = Persister.loadObj('projects', '[]');
+        for (var i = 0; i < projects.length; i++) {
+            if (projects[i].id === x) {
+                projects.splice(i, 1);
+                break;
+            }
+        }
+        Persister.saveObj('projects', projects);
+        $(this).parent().parent().remove();
+        load_projects();
+    });
 /*Autofocus en el modal*/
     $('#myModal3').on('shown.bs.modal', function() {
         $("#id").focus();

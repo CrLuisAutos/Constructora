@@ -4,27 +4,18 @@ html{
   min-height: 100%;
   position: relative;
 }
-body {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  line-height: 1.42em;
-  margin: 0;
-  margin-bottom: 40px;
-  color:#A7A1AE;
-  background-color: #81BEF7;
-}
 
 header{
   position: fixed;
   width: 100%;
-  background-color: #5882FA;
+  background-color: #DF0174;
 }
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   line-height: 1.42em;
   color:#A7A1AE;
-  background-color: #81BEF7;
+  background-color: #585858;
 }
 .nav-tabs li a{
   color:#FAFAFA;
@@ -39,7 +30,7 @@ footer{
   height: 40px;
   position: absolute;
   bottom: 0;
-  background-color: #5882FA;
+  background-color: #DF0174;
 }
 footer p{
   text-align: center;
@@ -48,16 +39,21 @@ footer p{
 
 .glyphicon-trash{
  color: #fff;
+ margin-right: 20px;
 }
 .glyphicon-plus{
  color: #0000FF;
 }
+.glyphicon-new-window{
+  margin-left: 20px;
+}
+
 th h1 {
   font-size:1.2em; 
   font-weight: 200;
   line-height:1em;
   text-align: center;
-  color: #4DC3FA;
+  color: #FA58D0;
 }
 
 h1 {
@@ -115,10 +111,10 @@ h1 {
 }
 
 .containerTable td:hover {
-  background-color: #5882FA;
+  background-color: #8A0868;
   color: #1C1C1C;
   font-weight: bold;
-  box-shadow: #81BEF7 -1px 1px, #81BEF7 -2px 2px, #81BEF7 -3px 3px, #81BEF7 -4px 4px, #81BEF7 -5px 5px, #151515 -6px 6px;
+  box-shadow: #FE2EC8 -1px 1px, #FE2EC8 -2px 2px, #FE2EC8 -3px 3px, #FE2EC8 -4px 4px, #FE2EC8 -5px 5px, #151515 -6px 6px;
   transform: translate3d(6px, -6px, 0);
   transition-delay: 0s;
   transition-duration: 0.4s;
