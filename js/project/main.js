@@ -34,7 +34,7 @@ function load_Projects() {
         date = projects[i].date;
         associates = projects[i].associates;
         icon = projects[i].icon;
-        $('tbody').append('<tr class="trprojects" id=' + id + '><td class="table-striped"> <h1>' + id + '</h1></td><td class="table-striped"> <h1>' + name + '</h1></td><td class="table-striped"> <h1>' + icon + '</h1></td><td class="table-striped"><h1>' + date + '</h1></td><td class="table-striped"> <h1>' + associates + '</h1></td><td class="table-striped"><a class="btnDelete"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></a><a class="btnDelete"><span class="glyphicon glyphicon-new-window" aria-hidden="true" ></span></a></td></tr>');
+        $('tbody').append('<tr class="trprojects" id=' + id + '><td class="table-striped"> <h1>' + id + '</h1></td><td class="table-striped"> <h1>' + name + '</h1></td><td class="table-striped"> <h1>' + icon + '</h1></td><td class="table-striped"><h1>' + date + '</h1></td><td class="table-striped"> <h1>' + associates + '</h1></td><td class="table-striped"><a class="btnDelete"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></a><a class="btnDetail"><span class="glyphicon glyphicon-new-window" aria-hidden="true" ></span></a></td></tr>');
     }
 }
 jQuery(document).ready(function($) {
@@ -85,6 +85,13 @@ function cleanModal() {
         Persister.saveObj('projects', projects);
         $(this).parent().parent().remove();
         load_projects();
+    });
+    //detalles del proyecto
+    $('tbody').on('click', '.btnDetail', function() {
+        event.preventDefault();
+      window.open("../projects/detail.html", "_parent");
+      document.title("jgl");
+      return false;
     });
 /*Autofocus en el modal*/
     $('#myModal3').on('shown.bs.modal', function() {
