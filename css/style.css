@@ -54,6 +54,14 @@ th h1 {
   text-align: center;
   color: #FA58D0;
 }
+.img-responsive{
+  max-width: 40px;
+  max-height: 40px;
+}
+.icon{
+  display: flex;
+  justify-content: center;
+}
 
 h1 {
     font-weight: bold;

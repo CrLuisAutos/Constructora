@@ -35,7 +35,7 @@ function load_People() {
         id = people[i].id;
         name = people[i].name;
         avatar = people[i].avatar;
-        $('tbody').append('<tr class="trPeople" id=' + id + '><td class="table-striped"> <h1>' + id + '</h1></td><td class="table-striped"> <h1>' + name + '</h1></td><td class="table-striped"><h1>' + avatar + '</h1></td><td class="table-striped"><a class="btnDelete"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></a></td></tr>');
+        $('tbody').append('<tr class="trPeople" id=' + id + '><td class="table-striped"> <h1>' + id + '</h1></td><td class="table-striped"> <h1>' + name + '</h1></td><td class="table-striped"><img src="'+avatar+'"></td><td class="table-striped"><a class="btnDelete"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></a></td></tr>');
     }
 }
 jQuery(document).ready(function($) {
