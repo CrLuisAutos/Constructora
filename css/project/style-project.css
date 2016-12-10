@@ -9,12 +9,17 @@
 h5{
 	margin-right: 6px;
 	color: #fff;
+	text-align: center;
 }
 
 
-#container{
+#container-states{
 	display: flex;
 	justify-content: center;
+	width: 100%;
+}
+#container{
+	display: flex;
 	width: 100%;
 }
 .cont-item{
@@ -22,11 +27,18 @@ h5{
 	justify-content: flex-start;
 	align-items: center;
 	flex-direction: column;
-	width: 200px;
+	min-width: 200px;
 	background-color: #B40404;
-	height: 400px;
+	min-height: 400px;
 	margin: 20px;
 	box-shadow: 8px 8px 10px #999;
+}
+#list-task{
+	width: 230px;
+	min-height: 400px;
+	margin-left: 5px;
+	box-shadow: 8px 8px 10px #999;
+	background-color: #B40404;
 }
 
 .item{

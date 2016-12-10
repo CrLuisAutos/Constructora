@@ -28,70 +28,77 @@
 				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 				</button>
 			</div>
+			<div id="task">
+				<h5>Undo</h5><button class="btn btn-default"><span class="glyphicon glyphicon-repeat" aria-hidden="true" ></span></button> 
+			</div>
 			
 		</div>
 		<div id="container">
-			
-			<div class="cont-item" ondrop="drop(event)" ondragover="allowDrop(event)">
-				<div class="item" id="drag1" draggable="true" ondragstart="drag(event)">
-					1
-				</div>
+			<div id="list-task" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<h5>Initial works</h5>
 			</div>
-			
-		</div>
-		<!-- Modal Add People and Edit People -->
-		<div class="container">
-			<div class="modal fade" id="myModal3" role="dialog">
-				<div class="modal-dialog">
-					
-					<!-- Modal content-->
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal"></button>
-							<h4 class="modal-title">Add project state</h4>
-						</div>
-						<div class="modal-body">
-							<input type="text" placeholder="State name" id="nameState"/>
-							<input name="color" type="color" value="#58FAF4" id="colorState" />
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal" id="inputSuccess">Close</button>
-							<button type="button" class="btn btn-default" data-dismiss="modal" id="saveState">Save</button>
-						</div>
-					</div>
-					
-				</div>
-			</div>
-			<div class="modal fade" id="myModal4" role="dialog">
-				<div class="modal-dialog">
-					
-					<!-- Modal content-->
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal"></button>
-							<h4 class="modal-title">Add project task</h4>
-						</div>
-						<div class="modal-body">
-							<input type="text" placeholder="Task name" id="nameTask"/><br>
-							<label>Choose a employee</label><select></select>
-							
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal" id="inputSuccess">Close</button>
-							<button type="button" class="btn btn-default" data-dismiss="modal" id="saveTask">Save</button>
-						</div>
-					</div>
-					
-				</div>
+			<div id="container-states">
 			</div>
 		</div>
-		<footer>
-			<p>Derechos Reservados © · Constructora Meco - Diseño Web: Luis Espinoza</p>
-		</footer>
-		<script src="../js/util/jquery-3.1.1.js"></script>
-		<script src="../js/util/js/bootstrap.min.js"></script>
-		<script src="../js/project/main-project.js"></script>
-		<script src="../js/project/details.js"></script>
 		
-	</body>
+	</div>
+	
+	<!-- Modal Add People and Edit People -->
+	<div class="container">
+		<div class="modal fade" id="myModal3" role="dialog">
+			<div class="modal-dialog">
+				
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"></button>
+						<h4 class="modal-title">Add project state</h4>
+					</div>
+					<div class="modal-body">
+						<input type="text" placeholder="State name" id="nameState"/>
+						<input name="color" type="color" value="#58FAF4" id="colorState" />
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal" id="inputSuccess">Close</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal" id="saveState">Save</button>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="modal fade" id="myModal4" role="dialog">
+			<div class="modal-dialog">
+				
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"></button>
+						<h4 class="modal-title">Add project task</h4>
+					</div>
+					<div class="modal-body">
+						<input type="text" placeholder="Task name" id="nameTask"/><br>
+						<label>Employees ID</label>
+						<select id="selectPeople">
+							
+						</select>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal" id="inputSuccess">Close</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal" id="saveTask">Save</button>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<footer>
+		<p>Derechos Reservados © · Constructora Meco - Diseño Web: Luis Espinoza</p>
+	</footer>
+	<script src="../js/util/jquery-3.1.1.js"></script>
+	<script src="../js/util/js/bootstrap.min.js"></script>
+	<script src="../js/project/main-project.js"></script>
+	<script src="../js/project/details.js"></script>
+	
+</body>
 </html>
