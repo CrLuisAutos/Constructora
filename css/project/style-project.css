@@ -1,12 +1,38 @@
-.state{
+.controls{
 	display: flex;
-	justify-content: flex-end;
+	justify-content: space-around;
 	width: 100%;
 }
-#add{
-	margin-right:6px;
+#state, #task{
+	display: flex;
 }
 h5{
 	margin-right: 6px;
 	color: #fff;
+}
+
+
+#container{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+.cont-item{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
+	width: 200px;
+	background-color: #B40404;
+	height: 400px;
+	margin: 20px;
+	box-shadow: 8px 8px 10px #999;
+}
+
+.item{
+	width: 80%;
+	margin: 5px;
+	background-color: #FE2E2E;
+	height: 90px;
+	box-shadow: 8px 8px 10px #F5A9A9;
 }
