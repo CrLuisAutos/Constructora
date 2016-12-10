@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>People</title>
+		<title>Project</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="../css/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="../css/style.css">
-		<link rel="stylesheet" type="text/css" href="../css/people/style.css">
 	</head>
 	<body>
 		<header>
 			<ul class="nav nav-tabs">
-				<li role="presentation" ><a href="../index.html">Home</a></li>
-				<li role="presentation"><a href="../projects/project.html">Add Projects</a></li>
-				<li role="presentation" class="active"><a href="../people/index.html">Add People</a></li>
+				<li role="presentation"><a href="../index.html">Home</a></li>
+				<li role="presentation" class="active"><a href="../projects/index-project.html">Add Projects</a></li>
+				<li role="presentation"><a href="../people/index-people.html">Add People</a></li>
 			</ul>
 		</header>
 		
@@ -22,9 +21,11 @@
 				<tr>
 					<th><h1>Id</h1></th>
 					<th><h1>Name</h1></th>
-					<th><h1>Avatar</h1></th>
+					<th><h1>Icon</h1></th>
+					<th><h1>Start date</h1></th>
+					<th><h1>Associates</h1></th>
 					<th>
-						<button data-toggle="modal" data-target="#myModal3" data-backdrop="static" class="btn btn-default" data-toggle="tooltip" title="Add people" id="add">
+						<button data-toggle="modal" data-target="#myModal3" data-backdrop="static" class="btn btn-default" data-toggle="tooltip" title="Add Project" id="add">
 						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 						</button>
 					</th>
@@ -44,16 +45,16 @@
 					<div class="modal-content">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal"></button>
-							<h4 class="modal-title">Add people</h4>
+							<h4 class="modal-title">Add project</h4>
 						</div>
 						<div class="modal-body">
 							<input type="text" autofocus placeholder="Id" id="id"/>
 							<input type="text" placeholder="Name" id="name"/>
-							<input type="text" placeholder="Avatar (Url)" id="avatar"/>
+							<input type="text" placeholder="Icon (Url)" id="icon"/>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal" id="inputSuccess">Close</button>
-							<button type="button" class="btn btn-default" data-dismiss="modal" id="savePeople">Save</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal" id="saveProject">Save</button>
 						</div>
 					</div>
 					
@@ -65,7 +66,6 @@
 		</footer>
 		<script src="../js/util/jquery-3.1.1.js"></script>
 		<script src="../js/util/js/bootstrap.min.js"></script>
-		<script src="../js/util/main.js"></script>
-		<script src="../js/people/main.js"></script>
+		<script src="../js/project/main-project.js"></script>
 	</body>
 </html>
