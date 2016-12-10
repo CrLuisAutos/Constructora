@@ -1,0 +1,12 @@
+.state{
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+}
+#add{
+	margin-right:6px;
+}
+h5{
+	margin-right: 6px;
+	color: #fff;
+}

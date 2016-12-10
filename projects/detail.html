@@ -5,22 +5,54 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="../css/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/project/style-project.css">
 		<link rel="stylesheet" type="text/css" href="../css/style.css">
 	</head>
 	<body>
-		<header>
+		<header id="header-index">
 			<ul class="nav nav-tabs">
 				<li role="presentation" ><a href="../index.html">Home</a></li>
-				<li role="presentation" class="active"><a href="../projects/project.html">Projects</a></li>
-				<li role="presentation"><a href="../people/index.html">People</a></li>
+				<li role="presentation"><a href="../projects/index-project.html">Add Projects</a></li>
+				<li role="presentation"><a href="../people/index-people.html">Add People</a></li>
+				<li role="presentation" class="active"><a href="#">Details</a></li>
 			</ul>
 		</header>
-			
+		<div class="state">
+			<h5>Add project state</h5><button data-toggle="modal" data-target="#myModal3" data-backdrop="static" class="btn btn-default" data-toggle="tooltip" title="Add Project" id="add">
+			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+			</button>
+		</div>
+		<!-- Modal Add People and Edit People -->
+		<div class="container">
+			<div class="modal fade" id="myModal3" role="dialog">
+				<div class="modal-dialog">
+					
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"></button>
+							<h4 class="modal-title">Add project state</h4>
+						</div>
+						<div class="modal-body">
+							<input type="text" placeholder="Name" id="name"/>
+							<input name="color" type="color" value="#58FAF4" id="colorState" />
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal" id="inputSuccess">Close</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal" id="saveState">Save</button>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
 		<footer>
 			<p>Derechos Reservados © · Constructora Meco - Diseño Web: Luis Espinoza</p>
 		</footer>
 		<script src="../js/util/jquery-3.1.1.js"></script>
 		<script src="../js/util/js/bootstrap.min.js"></script>
-		<script src="../js/project/main.js"></script>
+		<script src="../js/project/main-project.js"></script>
+		<script src="../js/project/details.js"></script>
+		
 	</body>
 </html>
