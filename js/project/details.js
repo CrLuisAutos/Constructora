@@ -12,12 +12,17 @@ jQuery(document).ready(function($) {
         var work = {};
         work.description = $("#descriptionTask").val();
         work.name = $("#nameTask").val();
+
         work.worker = $("#selectPeople").val();
         work.id = $("#idTask").val();
+
         if ((work.name !== "") && (work.worker !== "") && (work.id !== "") && (work.description !== "")) {
             cleanModal();
             $("inputSuccess").click();
             taskList.push(work);
+            //guarda el id del proyecto en la tarea
+
+
             Persister.saveObj('task', taskList);
             load_task();
         }
@@ -43,9 +48,8 @@ function cleanModal() {
     $("#selectPeople").val("");
     $("#idTask").val("");
 }
-/*Elimina row de la tabla*/
+/*Elimina una tarea d el proyecto*/
 $('#list-task').on('click', '.btnDelete', function() {
-	debugger;
     event.preventDefault();
     var x = $(this).parent().parent().attr('id');
     taskList = Persister.loadObj('task', '[]');
@@ -57,6 +61,9 @@ $('#list-task').on('click', '.btnDelete', function() {
     }
     Persister.saveObj('task', taskList);
     load_task();
+});
+$('#list-task').on('click', '.btnDelete', function() {
+
 });
 //carga 
 function load_task() {

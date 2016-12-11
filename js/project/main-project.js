@@ -1,4 +1,5 @@
 var projects = [];
+var detail = {};
 var id = "";
 var name = "";
 var date = "";
@@ -22,7 +23,6 @@ jQuery(document).ready(function($) {
 	load_Projects();
     //save botton
     $("#saveProject").click(function(event) {
-        var detail = {};
         detail.id = $("#id").val();
         detail.name = $("#name").val();
         detail.date = today();
