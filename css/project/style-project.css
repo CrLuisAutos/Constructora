@@ -38,13 +38,18 @@ h5{
 	min-height: 400px;
 	margin-left: 5px;
 	box-shadow: 8px 8px 10px #999;
-	background-color: #B40404;
+	background-color:  white;
 }
 
 .item{
 	width: 80%;
 	margin: 5px;
-	background-color: #FE2E2E;
-	height: 90px;
-	box-shadow: 8px 8px 10px #F5A9A9;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #3B0B0B;
+	height: 150px;
+	color:#000;
+	box-shadow: 8px 8px 10px #8A4B08;
 }

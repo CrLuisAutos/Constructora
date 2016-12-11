@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
+
 		<title></title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="../css/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="../css/project/style-project.css">
 		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 	</head>
 	<body>
 		<header id="header-index">
@@ -76,10 +78,12 @@
 						<h4 class="modal-title">Add project task</h4>
 					</div>
 					<div class="modal-body">
-						<input type="text" placeholder="Task name" id="nameTask"/><br>
-						<label>Employees ID</label>
-						<select id="selectPeople">
-							
+					<input type="text" placeholder="Task ID" id="idTask"/><br><br>
+						<input type="text" placeholder="Task name" id="nameTask"/><br><br>
+						<input type="text" placeholder="Description" id="descriptionTask"/><br><br>
+						
+						<select id="selectPeople" placeholder="fvs">
+							<option value="" disabled selected>Select Employee ID</option>
 						</select>
 						
 					</div>
@@ -98,6 +102,7 @@
 	<script src="../js/util/jquery-3.1.1.js"></script>
 	<script src="../js/util/js/bootstrap.min.js"></script>
 	<script src="../js/project/main-project.js"></script>
+	<script src="../js/util/main.js"></script>
 	<script src="../js/project/details.js"></script>
 	
 </body>
