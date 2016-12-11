@@ -24,7 +24,7 @@ jQuery(document).ready(function($) {
 
 //carga los proyectos existentes
 function load() {
-    $("#all-projects").html();
+    $("#all-projects").empty();
     projects = Persister.loadObj('projects', '[]');
     for (var i = 0; i < projects.length; i++) {
         name = projects[i].name;
@@ -35,8 +35,7 @@ function load() {
 }
 $('#all-projects').on('click', '.overlay', function() {
     event.preventDefault();
-    debugger;
-    id = $(this).attr('id');
-    window.open("projects/detail.html", "_parent");
+    var currentProject = $(this).attr('id');
+    window.open("projects/detail.html?"+currentProject+"", "_parent");
 });
 

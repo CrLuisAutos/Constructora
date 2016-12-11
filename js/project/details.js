@@ -1,5 +1,6 @@
 var stateProject = [];
 var taskList = [];
+var currentProject = window.location.search.substring(1);
 jQuery(document).ready(function($) {
     load_task();
     addPeople();
@@ -12,17 +13,13 @@ jQuery(document).ready(function($) {
         var work = {};
         work.description = $("#descriptionTask").val();
         work.name = $("#nameTask").val();
-
+        work.projectId = currentProject;
         work.worker = $("#selectPeople").val();
         work.id = $("#idTask").val();
-
         if ((work.name !== "") && (work.worker !== "") && (work.id !== "") && (work.description !== "")) {
             cleanModal();
             $("inputSuccess").click();
             taskList.push(work);
-            //guarda el id del proyecto en la tarea
-
-
             Persister.saveObj('task', taskList);
             load_task();
         }
@@ -70,7 +67,10 @@ function load_task() {
     $("#list-task").html("");
     taskList = Persister.loadObj('task', '[]');
     for (var i = 0; i < taskList.length; i++) {
-        $("#list-task").append('<div class="item" id="' + taskList[i].id + '" draggable="true" ondragstart="drag(event)"><h5> Task: ' + taskList[i].name + '</h5><h5> ID Worker: ' + taskList[i].worker + '</h5><h5>Description: ' + taskList[i].description + '</h5><div class="icon"><a class="btnDelete"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a><a class="btnEdit"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></div></div>');
+        if (taskList[i].projectId === currentProject) {
+            $("#list-task").append('<div class="item" id="' + taskList[i].id + '" draggable="true" ondragstart="drag(event)"><h5> Task: ' + taskList[i].name + '</h5><h5> ID Worker: ' + taskList[i].worker + '</h5><h5>Description: ' + taskList[i].description + '</h5><div class="icon"><a class="btnDelete"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a><a class="btnEdit"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></div></div>');
+
+        }
     }
 }
 
