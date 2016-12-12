@@ -16,7 +16,7 @@ function load_Projects() {
         date = projects[i].date;
         associates = projects[i].associates;
         icon = projects[i].icon;
-        $('tbody').append('<tr class="trprojects" id=' + id + '><td class="table-striped"> <h1>' + id + '</h1></td><td class="table-striped"> <h1>' + name + '</h1></td><td class="td-icon"> <img src="'+icon+'" id="img-responsive"></div></td><td class="table-striped"><h1>' + date + '</h1></td><td class="table-striped"> <h1>' + associates + '</h1></td><td class="table-striped"><a class="btnDelete"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></a><a class="btnDetail"><span class="glyphicon glyphicon-new-window" aria-hidden="true" ></span></a></td></tr>');
+        $('tbody').append('<tr class="trprojects" id=' + id + '><td class="table-striped"> <h1>' + id + '</h1></td><td class="table-striped"> <h1>' + name + '</h1></td><td class="td-icon"> <img src="'+icon+'" id="img-responsive"></div></td><td class="table-striped"><h1>' + date + '</h1></td><td class="table-striped"> <h1 id="as'+id+'">' + associates + '</h1></td><td class="table-striped"><a class="btnDelete"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></a><a class="btnDetail"><span class="glyphicon glyphicon-new-window" aria-hidden="true" ></span></a></td></tr>');
     }
 }
 jQuery(document).ready(function($) {
@@ -26,7 +26,7 @@ jQuery(document).ready(function($) {
         detail.id = $("#id").val();
         detail.name = $("#name").val();
         detail.date = today();
-        detail.associates = projectsCount();
+        detail.associates = associates;
         detail.icon = $("#icon").val();
         if ((detail.name !== "") && (detail.id !== "")) {
             cleanModal();
@@ -39,9 +39,7 @@ jQuery(document).ready(function($) {
     $(".containerPage h1").text();
 });
 	//total de personas asociadas al projecto
-function projectsCount () {
-	return 0;
-}
+
 	// toma la fecha del sistema
 function today () {
 	var f = new Date();

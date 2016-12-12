@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
-
 		<title></title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="../css/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="../css/project/style-project.css">
 		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<link rel="stylesheet" type="text/css" href="../css/project/style-project.css">
 		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 	</head>
 	<body>
@@ -30,14 +29,21 @@
 				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 				</button>
 			</div>
-			<div id="task">
-				<h5>Undo</h5><button class="btn btn-default"><span class="glyphicon glyphicon-repeat" aria-hidden="true" ></span></button> 
+			<div id="undo">
+				<h5>Undo</h5>
+				<button class="btn btn-default" data-toggle="tooltip" title="Add Project" id="addTasks">
+				<span class="glyphicon glyphicon-repeat" aria-hidden="true" ></span>
+			</div>
+			<div id="chart">
+				<h5>Chart</h5>
+				<button class="btn btn-default" data-toggle="tooltip" title="Add Project" id="chart">
+				<span class="glyphicon glyphicon-indent-left" aria-hidden="true" ></span>
 			</div>
 			
 		</div>
 		<div id="container">
 			<div id="list-task" ondrop="drop(event)" ondragover="allowDrop(event)">
-				<h5>Initial works</h5>
+				
 			</div>
 			<div id="container-states">
 			</div>
@@ -57,6 +63,7 @@
 						<h4 class="modal-title">Add project state</h4>
 					</div>
 					<div class="modal-body">
+						<input type="text" placeholder="State ID" id="idState"/>
 						<input type="text" placeholder="State name" id="nameState"/>
 						<input name="color" type="color" value="#58FAF4" id="colorState" />
 					</div>
@@ -78,18 +85,47 @@
 						<h4 class="modal-title">Add project task</h4>
 					</div>
 					<div class="modal-body">
-					<input type="text" placeholder="Task ID" id="idTask"/><br><br>
+						<input type="text" placeholder="Task ID" id="idTask"/><br><br>
 						<input type="text" placeholder="Task name" id="nameTask"/><br><br>
 						<input type="text" placeholder="Description" id="descriptionTask"/><br><br>
-						
-						<select id="selectPeople" placeholder="fvs">
+						<select class="selectPeople" placeholder="fvs">
 							<option value="" disabled selected>Select Employee ID</option>
 						</select>
 						
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal" id="inputSuccess">Close</button>
-						<button type="button" class="btn btn-default" data-dismiss="modal" id="saveTask">Save</button>
+						<button type="button" class="btn btn-default " data-dismiss="modal" id="saveTask">Save</button>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="modal fade" id="myModa15" role="dialog">
+			<div class="modal-dialog">
+				
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"></button>
+						<h4 class="modal-title">Edit project task</h4>
+					</div>
+					<div class="modal-body">
+						<label>ID: </label>
+						<input type="text" id="idEdit"/><br><br>
+						<label>Name: </label>
+						<input type="text" id="nameEdit"/><br><br>
+						<label>Description: </label>
+						<input type="text" id="descriptionEdit"/><br><br>
+						<label>Worker ID</label>
+						<select class="selectPeople" id="editSelect">
+							
+						</select>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal" id="inputEdit">Close</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal" id="saveEdit">Save</button>
 					</div>
 				</div>
 				
