@@ -36,7 +36,6 @@ jQuery(document).ready(function($) {
             load_Projects();
         }
     });
-    $(".containerPage h1").text();
 });
 	//total de personas asociadas al projecto
 

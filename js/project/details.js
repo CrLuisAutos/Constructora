@@ -9,6 +9,7 @@ jQuery(document).ready(function($) {
     loadState();
     load_task();
     addPeople();
+     $("#show-chart").attr("href", "../chartAll/index-chart.html?"+currentProject+"");
     $("#saveState").click(function(event) {
 
         stateProject.color = $("#colorState").val();
